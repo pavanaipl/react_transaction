@@ -10,6 +10,8 @@ import error from '../src/components/error'
 import modelIdList from '../src/components/modelidlist'
 import repairDetails from '../src/components/repairdetails'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
+import AddTrasactionForm from "../src/components/transaction_form"
+import EditTrasactionForm from "../src/components/edit_transaction_form"
 
 class App extends Component {
   constructor(props){
@@ -32,32 +34,18 @@ class App extends Component {
       <Provider store = {store}>
         <BrowserRouter>
           <div>
-          <div className={this.state.showdiv?"hidden":null}>
-            <div className="imageholder">
-              <img src={require('./images/animate.gif')} />
-              </div>
-          </div>
+          
             <Switch>
             <Route path="/" component={Main} exact/>
-            <Route path="/repairphone/:id" component={repairPhone} />
-            <Route path="/modeldetails/:id/:idamanafacture" component={modelDetails}/>
-            <Route path="/modeldeviceid/:id/:idamanafacture/:deviceid" component={modelIdList}/>
-            <Route path="/repairdetails/:id/:idamanafacture/:deviceid/:repairid" component={repairDetails}/>
-            <Route  component={error}/>
+            <Route path="/add_transaction" component={AddTrasactionForm} />
+            <Route path="/edit_transaction" component={EditTrasactionForm} />
+            
+           
             </Switch>
             </div>
         </BrowserRouter>
 
-      {/* <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Main/>
-      </div> */}
+   
         
       </Provider>
     );

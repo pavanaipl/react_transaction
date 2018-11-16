@@ -1,4 +1,5 @@
 import {REPAIR_LIST, REPAIR_PHONE, MODEL_PHONE, GET_MODEL, GET_REPAIR, POST_REQUEST} from './types'
+
 export const repairlist = () => dispatch =>{
     console.log("got")
     fetch("http://35.154.198.64/gprapi/repair/getRepairsList")
