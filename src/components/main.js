@@ -48,7 +48,7 @@ delete_information(id){
             .then((res) => {
               
               console.log(res.data.data)
-               // this.setState({all_transaction:res.data.data})
+               this.setState({all_transaction:res.data.data})
             })
             .catch(err => {
                 console.log(err);
@@ -126,15 +126,15 @@ onClickHandler(){
                             </button>
                              </Link>
                              
-
+                              <Link to={{ pathname: '/view_transaction', state: { id:items} }}>
                             <button
                               type="button"
                               className="btn btn-xs btn-default"
-                              onClick={(e) => this.user_information(items) }
+                              
                             >
                               View
                             </button>
-                            
+                            </Link>
 
                             <button
                               type="button"
@@ -155,27 +155,7 @@ onClickHandler(){
                              
                           </tbody>
 
-                          <Modal bsSize="lg" show={this.state.showModaltitle}
-                            onHide={() => this.setState({ showModaltitle: false })}>                
-              <Modal.Header closeButton>
-                  <Modal.Title bsClass="text-primary">
-                    
-                  </Modal.Title>           
-              </Modal.Header>             
-               <Modal.Body> 
-
-               <tr> ContractId : {this.state.data_items.contract_id} </tr>
-                <tr> ContractStatus : {this.state.data_items.contract_status} </tr>
-                 <tr> Portfolio : {this.state.data_items.portfolio} </tr>
-                  <tr> Portfolio_group : {this.state.data_items.portfolio_group} </tr>
-                   <tr> Counterparty : {this.state.data_items.counterparty} </tr>
-                   <tr> Security_type : {this.state.data_items.security_type} </tr>
-                   <tr> Security_group : {this.state.data_items.security_group} </tr>
-                   <tr> Dealer : {this.state.data_items.dealer} </tr>
-                
-                     
-              </Modal.Body>          
-         </Modal>
+                          
 
 
                        </table> 
@@ -199,3 +179,5 @@ onClickHandler(){
 //  }
 
 // export default connect(mapStateToProps, {repairlist, repairphone, create_posts})(Main);
+
+

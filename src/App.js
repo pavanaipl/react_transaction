@@ -12,6 +12,7 @@ import repairDetails from '../src/components/repairdetails'
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 import AddTrasactionForm from "../src/components/transaction_form"
 import EditTrasactionForm from "../src/components/edit_transaction_form"
+import ViewTrasactionDetails from "../src/components/view_transaction"
 
 class App extends Component {
   constructor(props){
@@ -39,7 +40,7 @@ class App extends Component {
             <Route path="/" component={Main} exact/>
             <Route path="/add_transaction" component={AddTrasactionForm} />
             <Route path="/edit_transaction" component={EditTrasactionForm} />
-            
+            <Route path="/view_transaction" component={ViewTrasactionDetails} />
            
             </Switch>
             </div>
